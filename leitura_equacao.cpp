@@ -1,5 +1,5 @@
-void leitura_equacao(string eq, vector<char> vetor_eq, char incio_inter, deque<char> eq_atualizada){ //Um função que recebe como parâmetro a equação que usuário digitou, o vetor que guarda char's que guardará a equação na memória e o 1º intercalo
-  deque<int> valores_chars_inv;
+void leitura_equacao(string eq, vector<char> vetor_eq, char incio_inter, deque<char> eq_atualizada){ //Um função que recebe como parâmetro a equação que usuário digitou, o vetor que guarda char's que guardará a equação na memória e o 1º intercalo e a fila dupla que vai guardar na memória a equação atualizada.
+  deque<int> valores_chars_in;
   
   for(int i = 0; i < eq.length(); i++){ //Para -> enquanto i tiver um valor menor que a quantidade de caracteres contidos na string eq, o algortimo continuará entrando neste loop.
     vetor_eq.at(i).push_back(eq[i]); //Nesta linha, o vetor vetor_eq será usado para guardar na memória toda a equação digitada pelo usuário; guardando caracter por caracter.
