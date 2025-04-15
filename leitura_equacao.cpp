@@ -17,12 +17,12 @@ void leitura_equacao(string eq, vector<char> vetor_eq, char incio_inter, deque<c
         eq_atualizada.push_back('*');
         eq_atualizada.push_back(inicio_inter);
       }
+    }
     
-      else if(vetor_eq != 'x'){ //Aqui será feita a varredura das funções trancendentais -> cos(); sen(); tg(); ln(); log; arccos(); arcsen(); arctg(); sec(); cotg(); cossec();
+    else if(isalpha(vetor_eq.at(i)) and vetor_eq.at(i) != 'x'){ //Aqui será feita a varredura das funções trancendentais -> cos(); sen(); tg(); ln(); log; arccos(); arcsen(); arctg(); sec(); cotg(); cossec();
         /*
         Programar aqui para funções transendentais.
         */
-      }
     }
 
     else if(vetor_eq.at(i) == '+' or vetor_eq.at(i) == '-' or vetor_eq.at(i) == '/' or vetor_eq.at(i) == '*'){
@@ -31,6 +31,10 @@ void leitura_equacao(string eq, vector<char> vetor_eq, char incio_inter, deque<c
 
     else if(vetor_eq.at(i) == '^'){
       if(isdigit(vetor_eq.at(i - 1))){
+        int numero = vetor_eq.at(i - 1) - '0';
+        int pot = vetor_eq.at(i + 1) - '0';
+        int valor = numero ** pot;
+        char valor_char = static_cast<char> valor;
         eq_atualizada.push_back(vetor_eq.at(i));
       }
     }
